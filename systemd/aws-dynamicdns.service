@@ -1,0 +1,9 @@
+[Unit]
+Description=Updates DNS on AWS Route53 with the public IP from the current network gateway
+
+[Service]
+Type=oneshot
+ExecStart=docker run --rm -e HOSTED_ZONE_ID=ABC123 -e DYNAMIC_DNS_NAME=subdomain.example.org aws-dynamicdns:latest
+
+[Install]
+WantedBy=multi-user.target

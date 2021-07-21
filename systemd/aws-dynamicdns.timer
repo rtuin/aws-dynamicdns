@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs the Dynamic DNS service frequently
+
+[Timer]
+OnCalendar=*-*-* *:33:00
+
+[Install]
+WantedBy=timers.target
